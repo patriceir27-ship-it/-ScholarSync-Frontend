@@ -1,0 +1,82 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Custom components */
+.btn-primary {
+  @apply px-6 py-2 bg-chancen-green text-white rounded-lg hover:bg-chancen-green-dark transition;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 border-2 border-chancen-green text-chancen-green rounded-lg hover:bg-chancen-green hover:text-white transition;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-chancen-green;
+}
+
+.label {
+  @apply block text-sm font-medium text-chancen-gray mb-2;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Frontend .env.example */
+// .env.example
+NEXT_PUBLIC_API_URL=http://localhost:3001/api
+NEXT_PUBLIC_FRONTEND_URL=http://localhost:3000
